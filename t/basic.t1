@@ -1,0 +1,13 @@
+#! perl
+use strict;
+use warnings;
+use Test::More tests => 1;
+use Test::Synchronized;
+
+open(my $file, '>', 'hello.txt');
+print $file "hello\n";
+close($file);
+
+sleep(5);
+
+ok(-f 'hello.txt');
