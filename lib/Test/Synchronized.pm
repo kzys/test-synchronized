@@ -1,20 +1,20 @@
 package Test::Synchronized;
 use strict;
 use warnings;
+use Test::Synchronized::Lock;
 
-my $Path = sprintf('lock.%d', getppid());
+our $VERSION = '0.01';
+
+my $default_instance = Test::Synchronized::Lock->new({
+    id => getppid()
+});
 
 END {
-    unlink($Path);
+    $default_instance->unlock;
 }
 
 sub import {
-    while (-f $Path) {
-        sleep(1);
-    }
-
-    open(my $file, '>', $Path);
-    close($file);
+    $default_instance->lock;
 }
 
 1;
