@@ -36,9 +36,7 @@ Test::Synchronized
 
 "prove -j9" is fast. But your tests are parallel-safe?
 
-Test::Synchronized provides simple lock system for your tests.
-
-If your tests includes some parallel-unsafe tests, You can use "prove -j9" and Test::Synchronized tag to speed up your development cycl.
+Test::Synchronized provides simple lock system for your tests. If your tests includes some parallel-unsafe tests, You can use "prove -j9" with Test::Synchronized to speed up your development.
 
 =head1 AUTHOR
 
