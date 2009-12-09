@@ -1,4 +1,10 @@
 Revision history for Perl extension Test::Synchronized
 
+0.02  Thu Dec 10 00:47:19 JST 2009
+    - Fixed race condition of mkdir.
+    - Don't hardcode "/tmp" as a temporary directory.
+    - And these bugs/problems were reported by MATSUNO★Tokuhiro. Thank you!
+      http://d.hatena.ne.jp/tokuhirom/20091209/1260330943
+
 0.01  Wed Dec  9 00:12:26 JST 2009
 	- Initial release.
