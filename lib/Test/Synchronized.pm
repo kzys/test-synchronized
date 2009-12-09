@@ -10,7 +10,7 @@ my $default_instance = Test::Synchronized::Lock->new({
 });
 
 END {
-    $default_instance->unlock;
+    undef $default_instance;
 }
 
 sub import {
@@ -36,7 +36,9 @@ Test::Synchronized
 
 "prove -j9" is fast. But your tests are parallel-safe?
 
-Test::Synchronized provides simple lock system for your tests. If your tests includes some parallel-unsafe tests, You can use "prove -j9" with Test::Synchronized to speed up your development.
+Test::Synchronized provides simple lock system for your tests.
+
+If your tests includes some parallel-unsafe tests, You can use "prove -j9" and Test::Synchronized tag to speed up your development cycl.
 
 =head1 AUTHOR
 
