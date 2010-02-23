@@ -3,11 +3,15 @@ use strict;
 use warnings;
 use Test::Synchronized::Lock;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 my $default_instance = Test::Synchronized::Lock->new({
     id => getppid()
 });
+
+$SIG{INT} = sub {
+    undef $default_instance;
+};
 
 END {
     undef $default_instance;
