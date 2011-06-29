@@ -1,25 +1,11 @@
 package Test::Synchronized;
 use strict;
 use warnings;
+
 use Test::Synchronized::FileLock;
+use Test::Synchronized::Extensible lock_class => 'Test::Synchronized::FileLock';
 
 our $VERSION = '0.03';
-
-my $default_instance = Test::Synchronized::FileLock->new({
-    id => getppid()
-});
-
-$SIG{INT} = sub {
-    undef $default_instance;
-};
-
-END {
-    undef $default_instance;
-}
-
-sub import {
-    $default_instance->lock;
-}
 
 1;
 

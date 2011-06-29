@@ -4,9 +4,11 @@ use warnings;
 use base qw(Class::Accessor::Fast);
 
 sub lock {
+    ;
 }
 
 sub unlock {
+    ;
 }
 
 sub DESTROY {
