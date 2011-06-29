@@ -3,7 +3,6 @@ use inc::Module::Install;
 
 name 'Test-Synchronized';
 all_from 'lib/Test/Synchronized.pm';
-auto_set_repository;
 
 requires 'Class::Accessor::Fast' => 0;
 
