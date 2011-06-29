@@ -1,11 +1,11 @@
 package Test::Synchronized;
 use strict;
 use warnings;
-use Test::Synchronized::Lock;
+use Test::Synchronized::FileLock;
 
 our $VERSION = '0.03';
 
-my $default_instance = Test::Synchronized::Lock->new({
+my $default_instance = Test::Synchronized::FileLock->new({
     id => getppid()
 });
 
