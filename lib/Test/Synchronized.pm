@@ -5,7 +5,7 @@ use warnings;
 use Test::Synchronized::FileLock;
 use Test::Synchronized::Extensible lock_class => 'Test::Synchronized::FileLock';
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 1;
 
